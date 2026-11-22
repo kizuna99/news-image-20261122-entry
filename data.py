@@ -1,0 +1,183 @@
+"""Day data — Sunday 22 November 2026 (all items verified as reported that
+day; see SOURCES.md). Consumed by render.py."""
+
+DAY = {
+    "date_long": "Sunday 22 November 2026",
+    "dayline": "DAY 326 OF 2026",
+    "ticker": "Russia fires 186 drones at Ukraine in one night  ◆  Russian "
+              "cargo ship ablaze in the Baltic  ◆  COP31 deadlocked into a "
+              "second day of overtime",
+    "count_line": "40 STORIES · 9 REGIONS · EVERY ONE DATED SUNDAY "
+                  "22 NOVEMBER 2026",
+    "stats": [
+        ("186", "Russian drones fired at Ukraine overnight", "UKR. AIR FORCE"),
+        ("161", "of them downed or jammed, Kyiv says", "QNA"),
+        ("16", "crew evacuated from the burning Sparta II", "YLE"),
+        ("1.5°C", "of warming the new COP31 draft concedes", "GUARDIAN"),
+        ("36", "still missing in the Serang factory fire", "BERNAMA"),
+        ("180+", "hospitalised in Manipur's liquor case", "REUTERS"),
+    ],
+    "regions": [
+        ("Europe", 11), ("Middle East", 8), ("Americas", 7), ("Africa", 3),
+        ("South Asia", 1), ("East Asia", 3), ("South-East Asia", 3),
+        ("Oceania", 2), ("Global", 2),
+    ],
+    "timeline": [
+        (0.02, "OVERNIGHT · 186 DRONES"),
+        (0.30, "09:00 APEX REVIEW"),
+        (0.50, "MIDDAY · COP31 DRAFT"),
+        (0.68, "BAHRAIN DEMANDS PAYMENT"),
+        (0.85, "BITCOIN STEADIES"),
+        (0.955, "SERANG SEARCH"),
+    ],
+    "leads": [
+        {
+            "art": "ship", "chip": "DRONE STRIKE · BALTIC SEA",
+            "chip_r": "CREW OF 16 SAFE",
+            "kicker": "1 · BALTIC SEA · CONFLICT", "badge": "CONFIRMED",
+            "headline": "Russian cargo ship burns after Baltic drone strike",
+            "summary": "Sparta II drifts into Finnish waters, still "
+                       "burning; all 16 crew evacuated as Helsinki blames "
+                       "Kyiv's drones.",
+            "sources": "REUTERS · YLE",
+        },
+        {
+            "art": "cop", "chip": "COP31 · ANTALYA", "chip_r": "OVERTIME",
+            "kicker": "2 · COP31, ANTALYA · CLIMATE", "badge": "CONFIRMED",
+            "headline": "COP31 deadlocked into a second day of overtime",
+            "summary": "A new Australia–Türkiye draft concedes warming is "
+                       "on course to pass 1.5°C; fossil-fuel wording splits "
+                       "some 200 nations.",
+            "sources": "GUARDIAN · REUTERS",
+        },
+        {
+            "art": "drones", "chip": "186 DRONES · ONE NIGHT",
+            "chip_r": "161 DOWNED",
+            "kicker": "3 · UKRAINE · WAR", "badge": "CONFIRMED",
+            "headline": "Russia fires 186 drones in one-night barrage",
+            "summary": "Kyiv says 161 were downed or jammed; strikes land "
+                       "at 18 sites, 11 hurt in Sloviansk and Kherson.",
+            "sources": "QNA · UKR. AIR FORCE",
+        },
+    ],
+    "cards": [
+        {"n": 4, "tag": "MANIPUR · INDIA", "badge": "CONFIRMED",
+         "stat": "11", "note": "DEAD",
+         "headline": "Tainted liquor kills 11 in India's Manipur",
+         "detail": "Adulterated local alcohol; chief minister orders probe",
+         "sources": "REUTERS"},
+        {"n": 5, "tag": "SERANG · INDONESIA", "badge": "CONFIRMED",
+         "stat": "36", "note": "MISSING",
+         "headline": "Search for 36 missing in factory fire",
+         "detail": "Rescuers comb gutted candy factory; blaze killed 3",
+         "sources": "RTM · BERNAMA"},
+        {"n": 6, "tag": "BAHRAIN · GULF", "badge": "CONFIRMED",
+         "stat": "UN", "note": "ACTION URGED",
+         "headline": "Bahrain demands Iran pay for strike damage",
+         "detail": "Tehran held fully responsible for the plant hit",
+         "sources": "RTM · REUTERS"},
+        {"n": 7, "tag": "FRANCE · FLOODS", "badge": "REPORTED",
+         "stat": "850", "note": "HOMES SUBMERGED",
+         "headline": "Floods submerge some 850 homes in France",
+         "detail": "Waters rise across several regions",
+         "sources": "AKTUAL"},
+        {"n": 8, "tag": "KYIV · WAR", "badge": "REPORTED",
+         "stat": "14", "note": "FEARED TRAPPED",
+         "headline": "Fourteen feared trapped in Kyiv block",
+         "detail": "Residential block hit by a drone overnight",
+         "sources": "APEX WIRE"},
+        {"n": 9, "tag": "MARKETS · CRYPTO", "badge": "REPORTED",
+         "stat": "$60k", "note": "BITCOIN STEADIES",
+         "headline": "Bitcoin steadies near $60,000",
+         "detail": "After a slide toward $55,000 rattled markets",
+         "sources": "APEX WIRE"},
+        {"n": 10, "tag": "MLS · FOOTBALL", "badge": "REPORTED",
+         "stat": "26", "note": "GOALS",
+         "headline": "Messi wins second straight MLS Golden Boot",
+         "detail": "Inter Miami still lose 0–3 to Columbus Crew",
+         "sources": "KITAINDONESIASATU"},
+        {"n": 11, "tag": "GENEVA · ARMS TALKS", "badge": "CONFIRMED",
+         "stat": "128", "note": "COUNTRIES",
+         "headline": "UN talks to draft 'killer robot' rules",
+         "detail": "128 countries aim at agreed rules by 2028",
+         "sources": "REUTERS · AL JAZEERA"},
+        {"n": 12, "tag": "LEBAK · INDONESIA", "badge": "REPORTED",
+         "stat": "32", "note": "HOMES GUTTED",
+         "headline": "Fire guts 32 Baduy homes in Lebak",
+         "detail": "132 people displaced by the village blaze",
+         "sources": "KITAINDONESIASATU"},
+        {"n": 13, "tag": "BRATISLAVA · EU", "badge": "CONFIRMED",
+         "stat": "€45bn", "note": "LOAN REFUSED",
+         "headline": "Fico: Slovakia won't fund EU Ukraine loan",
+         "detail": "Bratislava breaks with the €45bn package",
+         "sources": "REUTERS SUMMARY"},
+    ],
+    "also_head": "ALSO ON SUNDAY 22 NOVEMBER — 27 MORE STORIES, IN ORDER "
+                 "OF CONSEQUENCE",
+    "also": [
+        ("Krasnodar", "drones likely hit Rosgvardiya directorate", "APEX"),
+        ("Lviv", "dashcam films missile striking residential block", "APEX"),
+        ("Rome", "ex-police chief De Gennaro found dead amid probe", "APEX"),
+        ("Zagreb", "rally over psychiatric-hospital death", "REUTERS"),
+        ("Estonia", "opens road link bypassing Russian territory", "PRESS"),
+        ("Brussels", "Costa floats 3% digital tax in budget deal", "REUTERS"),
+        ("Tehran", "Iran starts rolling power cuts of up to 2h a day", "RFE/RL"),
+        ("Washington", "Trump seeks permanent deal barring Iran's bomb", "RTM"),
+        ("Tehran", "Qatari delegation holds talks in Tehran", "REUTERS"),
+        ("Gulf", "US denies Iran claim its missile damaged an F-16", "REUTERS"),
+        ("Gaza", "meningitis cases climb unusually", "AKTUAL"),
+        ("Lebanon", "UNIFIL starts handing posts to the army", "RTM"),
+        ("Nigeria", "bandits kill 11, burn homes and shops", "JURNALISTIK"),
+        ("Algeria", "shoots dead two Moroccan drug smugglers", "JURNALISTIK"),
+        ("Pretoria", "first woman deputy president dies, aged 71", "REUTERS"),
+        ("Brasília", "Bolsonaro taken to hospital, stomach pain", "SKARDU"),
+        ("Amazon", "Brazil moves to shield Raoni's birthplace", "AP"),
+        ("Halifax", "Canada sees no shift in US military ties", "REUTERS"),
+        ("Washington", "Democrats draft 100-day agenda", "REUTERS"),
+        ("Hormuz", "swimmer Pugh crosses strait to plead for peace", "BBC"),
+        ("Vietnam", "speeds land seizures for priority projects", "REUTERS"),
+        ("Seoul", "education minister quits in AI exam scandal", "RTM"),
+        ("Beijing", "China protests US block on its telecom firms", "RTM"),
+        ("Mount Oyama", "maple crowds flock to Japan peak", "AKTUAL"),
+        ("Canberra", "Marles: US budget office 'wrong' on AUKUS", "REUTERS"),
+        ("Cardiff", "Wallabies edge Wales; England beat All Blacks", "ONE TURN"),
+        ("Santa Clara", "Nvidia accounting in focus of SEC probe", "REUTERS"),
+    ],
+    "date_check": "Left out as other days' news: the Sparta II was hit "
+                  "before Sunday — her evacuation and the Finnish blame "
+                  "were Sunday's news · the COP31 summit opened earlier; "
+                  "Sunday brought the second overtime day and the new "
+                  "draft · the 186-drone count is the overnight wave "
+                  "Ukraine reported on Sunday.",
+    "footer": "Every story here was first reported on Sunday "
+              "22 November 2026, as the named outlets reported it.",
+    "how_sure": "HOW SURE — CONFIRMED: carried by 2+ major outlets · "
+                "OFFICIAL: on the record: agency, ministry, federation · "
+                "REPORTED: one major outlet",
+    "seed": 20261122,
+    "out_name": "entry.png",
+}
+
+# Pins for the map: (story number, lon, lat, region)
+PINS = [
+    (1, 24.0, 59.5, "Europe"), (2, 30.7, 36.9, "Middle East"),
+    (3, 31.5, 49.0, "Europe"), (4, 93.9, 24.8, "South Asia"),
+    (5, 106.1, -6.1, "South-East Asia"), (6, 50.5, 26.2, "Middle East"),
+    (7, 2.5, 47.0, "Europe"), (8, 30.5, 50.4, "Europe"),
+    (9, -74.0, 40.7, "Americas"), (10, -80.2, 25.8, "Americas"),
+    (11, 6.1, 46.2, "Global"), (12, 106.3, -6.8, "South-East Asia"),
+    (13, 19.7, 48.7, "Europe"), (14, 38.9, 45.0, "Europe"),
+    (15, 24.0, 49.8, "Europe"), (16, 12.5, 41.9, "Europe"),
+    (17, 15.9, 45.8, "Europe"), (18, 25.0, 59.0, "Europe"),
+    (19, 4.35, 50.85, "Europe"), (20, 51.4, 35.7, "Middle East"),
+    (21, -77.0, 38.9, "Middle East"), (22, 51.4, 35.7, "Middle East"),
+    (23, 47.0, 29.0, "Middle East"), (24, 34.3, 31.4, "Middle East"),
+    (25, 35.5, 33.3, "Middle East"), (26, 8.0, 10.0, "Africa"),
+    (27, -2.0, 35.0, "Africa"), (28, 28.0, -26.2, "Africa"),
+    (29, -47.9, -15.8, "Americas"), (30, -52.0, -3.0, "Americas"),
+    (31, -63.6, 44.6, "Americas"), (32, -77.0, 38.9, "Americas"),
+    (33, 56.3, 26.2, "Global"), (34, 105.8, 21.0, "South-East Asia"),
+    (35, 127.0, 37.5, "East Asia"), (36, 116.4, 39.9, "East Asia"),
+    (37, 139.3, 35.4, "East Asia"), (38, 149.1, -35.3, "Oceania"),
+    (39, -3.2, 51.5, "Oceania"), (40, -122.0, 37.4, "Americas"),
+]

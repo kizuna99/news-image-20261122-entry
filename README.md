@@ -2,33 +2,29 @@
 [![rank](https://make.fun/badge/news-image-20261122/kizuna99/news-image-20261122-entry/rank.svg)](https://make.fun/bounty/news-image-20261122/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261122)
 [![reward](https://make.fun/badge/news-image-20261122/kizuna99/news-image-20261122-entry/reward.svg)](https://make.fun/bounty/news-image-20261122?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261122)
 
-# The World Brief — Sunday 22 November 2026: 40 sourced stories, 9 regions, 6 illustrated
+# The World in One Day — Sunday 22 November 2026: 40 stories, 9 regions, every one dated
 
-An original editorial front-page poster for [make.fun](https://make.fun/bounty/news-image-20261122): one day of world news — Sunday, 22 November 2026 — summed up in a single 1024 × 1024 image. Six lead stories are illustrated with drawn geometry; a World Wire column adds 34 more dated stories across nine regions. The poster contains no news photography; every illustration is original vector-style geometry drawn by `render.py` (Pillow, deterministic, supersampled 2048 → 1024). Full source list: see `SOURCES.md`.
+An original editorial broadsheet poster for [make.fun](https://make.fun/bounty/news-image-20261122): the whole of Sunday 22 November 2026's world news on one 1024 × 1024 page — a giant dated masthead, the day in UTC on a timeline, six key numbers, three illustrated lead stories (the Sparta II burning in the Baltic, COP31 in a second day of overtime, and the 186-drone barrage over Ukraine), ten numbered story cards, a pin map of where it happened, and 27 more dated stories in the "Also on Sunday" column. A date-check box names the context that belongs to another day. No news photography: every picture, map and icon is original geometry drawn by `render.py` (Pillow, deterministic, supersampled 2048 → 1024). Full source list: see `SOURCES.md`.
 
-![The World Brief for Sunday 22 November 2026 — 40 sourced stories, 6 illustrated](entry.png)
+![The World in One Day for Sunday 22 November 2026 — 40 dated stories, 9 regions](entry.png)
 
-## The six illustrated stories
+## The three illustrated leads
 
-1. **Baltic / Gulf of Finland.** The Russian military-linked cargo ship Sparta II, set ablaze by a drone strike, drifted into Finnish waters still burning; all 16 crew were evacuated to a Russian rescue ship as Finland blamed Ukrainian drones. (Reuters, Yle, 22 Nov 2026)
-2. **COP31, Türkiye.** The UN climate summit in Antalya ran into a second day of overtime with no deal; a new presidency draft concedes warming is on course to pass 1.5°C while fossil-fuel wording still splits nearly 200 nations. (The Guardian, Reuters, 22 Nov 2026)
-3. **Ukraine.** Russia launched 186 drones overnight; Ukraine's Air Force said 161 were shot down or jammed, with strikes recorded at 18 locations and 11 people injured in Sloviansk and Kherson. (QNA, Ukrainian Air Force, 22 Nov 2026)
-4. **Bahrain / Gulf.** Bahrain demanded Iran be held fully responsible for the strike on a civilian industrial facility, pay compensation for the damage, and called for UN action. (RTM, Bernama, 22 Nov 2026)
-5. **India.** At least 11 people died and more than 180 were hospitalised in Manipur after drinking adulterated locally made alcohol; the chief minister promised an investigation. (Reuters, 22 Nov 2026)
-6. **Indonesia.** Rescuers continued searching for 36 people missing after a fire gutted a confectionery factory in Serang; three people were confirmed dead. (RTM, Bernama, 22 Nov 2026)
+1. **Baltic Sea.** The Russian cargo ship Sparta II, struck by drones, drifted into Finnish waters still burning; all 16 crew were evacuated and Helsinki blamed Kyiv's drones. (Reuters, Yle, 22 Nov 2026)
+2. **COP31, Antalya.** The climate summit ran into a second day of overtime: a new Australia–Türkiye draft concedes warming is on course to pass 1.5°C, and fossil-fuel wording splits some 200 nations. (The Guardian, Reuters, 22 Nov 2026)
+3. **Ukraine.** Russia fired 186 drones in a single overnight barrage; Kyiv says 161 were downed or jammed, with strikes landing at 18 sites and 11 hurt in Sloviansk and Kherson. (QNA, Ukrainian Air Force, 22 Nov 2026)
 
-## The World Wire (34 more, all first reported Sunday 22 Nov 2026)
+## The ten cards
 
-Drones likely hit the Rosgvardiya directorate in Krasnodar · Fourteen feared trapped in a Kyiv apartment block hit by a drone · Dashcam films a missile striking residential Lviv · Slovakia's Fico says his country won't fund the €45bn EU loan for Ukraine · Estonia opens a road link bypassing Russian territory · Italy's former police chief De Gennaro found dead amid a mafia-probe accusation · Zagreb rallies over a psychiatric hospital death · Floods submerge some 850 homes across France · EU chair Costa floats a 3% digital tax in the budget deal · Iran starts rolling power cuts of up to two hours a day · Trump seeks a permanent deal barring Iran's nuclear weapons · Qatari delegation holds talks in Tehran · US denies Iran's claim its missile damaged an F-16 over the Gulf · Meningitis cases climb unusually in Gaza · UNIFIL starts handing its south Lebanon posts to the Lebanese army · Bandits kill 11 in Nigeria and burn homes and shops · Algeria shoots dead two Moroccan drug smugglers · South Africa's first woman deputy president, Phumzile Mlambo-Ngcuka, dies at 71 · Bolsonaro taken to a Brasília hospital with abdominal pain · Brazil moves to protect the Amazon birthplace of Chief Raoni · Canada's defence minister sees no shift in US military ties · Democrats draft a 100-day agenda after their midterm wins · UN talks agree to start drafting 'killer robot' rules by 2028 · Swimmer Lewis Pugh crosses the Strait of Hormuz to plead for peace · Vietnam speeds land seizures for priority projects · South Korea's education minister quits over an AI exam-cheating scandal · China protests the US block on its telecom firms · Maple crowds flock to Japan's Mount Oyama · Fire guts 32 Baduy homes in Lebak, displacing 132 · Australia's Marles says the US budget office is 'wrong' on the AUKUS submarine pact · England beat the All Blacks as the Wallabies edge Wales · Bitcoin steadies near $60,000 after a slide toward $55,000 · Nvidia's accounting in focus of an SEC probe, sources say · Messi wins a second straight MLS Golden Boot as Inter Miami lose 0–3.
+Tainted liquor kills 11 in Manipur (Reuters) · Search for 36 missing in the Serang factory fire (RTM, Bernama) · Bahrain demands Iran pay for strike damage (RTM, Reuters) · Floods submerge some 850 homes in France (Aktual) · Fourteen feared trapped in a Kyiv block (Apex Wire) · Bitcoin steadies near $60,000 (Apex Wire) · Messi wins a second straight MLS Golden Boot (KitaIndonesiasatu) · UN talks to draft 'killer robot' rules with 128 countries (Reuters, Al Jazeera) · Fire guts 32 Baduy homes in Lebak (KitaIndonesiasatu) · Fico says Slovakia won't fund the €45bn EU Ukraine loan (Reuters summary).
 
-## Design notes
+## How it is built
 
-The hero pairs the day's two running stories: the burning Sparta II in the Gulf of Finland (lighthouse, rescue vessel standing off, drone streaks) beside a second dawn of overtime at COP31 in Antalya. Panel icons are drawn for the day — a drone swarm for the 186-drone barrage, a §-sealed claim coin over the Bahrain plant, bottles with a medical warning badge for Manipur, and a searched, smoking factory for Serang. The layout keeps the series' discipline: every headline and wire line is set in full, nothing is cropped, and the date-check footer states the rule the page was compiled under.
+- `data.py` — the day's verified stories, numbers, timeline, cards and map pins.
+- `render.py` — the broadsheet renderer and all of the original artwork (broadsheet masthead, stat band, region tabs, UTC timeline, three illustrated leads, cards, dot-grid pin map, date-check box).
+- `main.py` — the sandbox entrypoint: verifies the committed `entry.png` is a whole, CRC-valid 1024 × 1024 PNG of at most 1 MiB and publishes it byte for byte.
+- `SOURCES.md` — every story with the outlets that reported it on 22 Nov 2026.
 
-## Run locally
-
-`MAKEFUN_OUTPUT_DIR=out python3 main.py` writes the committed PNG (the contest program: standard library only; it walks the PNG chunk list, verifies every CRC, and checks the size and dimensions before publishing). To regenerate the artwork: `python3 render.py` (requires Pillow and Liberation fonts).
-
-## License
+## Licence
 
 MIT — see `LICENSE`.
