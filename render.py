@@ -453,6 +453,173 @@ def paint_drones(d, x, y, w, h):
     rect(d, x, y + h - 3, x + w, y + h, fill=(4, 5, 8))
 
 
+# ------------------------------------------------------- mini card art ---
+# Small illustrated strips for the story cards, in the same flat drawn
+# style as the leads (both winning editions illustrate every card).
+
+def _mini_bottle(d, x, y, w, h):
+    rect(d, x, y, x + w, y + h, fill=(22, 48, 52))
+    bx = x + w * 0.44
+    _poly(d, [(bx - 2, y + 2), (bx + 2, y + 2), (bx + 2, y + 7),
+              (bx + 5.5, y + 10), (bx + 5.5, y + h - 2),
+              (bx - 5.5, y + h - 2), (bx - 5.5, y + 10), (bx - 2, y + 7)],
+          (16, 34, 24), (196, 200, 180), 0.8)
+    rect(d, bx - 5.5, y + h - 9, bx + 5.5, y + h - 3, fill=(198, 148, 52))
+    d.line([X(bx - 4), X(y + 4), X(bx + 4), X(y + h - 4)], fill=RED,
+           width=int(1.6 * SS))
+    d.line([X(bx - 4), X(y + h - 4), X(bx + 4), X(y + 4)], fill=RED,
+           width=int(1.6 * SS))
+    for gx in (0.16, 0.78):
+        gx_ = x + w * gx
+        _poly(d, [(gx_ - 3.4, y + h - 3), (gx_ + 3.4, y + h - 3),
+                  (gx_ + 1.2, y + h - 9), (gx_ - 1.2, y + h - 9)],
+              (120, 128, 120))
+
+
+def _mini_factory(d, x, y, w, h):
+    rect(d, x, y, x + w, y + h, fill=(26, 24, 30))
+    rect(d, x, y + h - 8, x + w * 0.62, y + h, fill=(10, 10, 12))
+    for i in range(3):
+        sx = x + 6 + i * (w * 0.62 - 12) / 2
+        _poly(d, [(sx, y + h - 8), (sx + 7, y + h - 14), (sx + 14, y + h - 8)],
+              (10, 10, 12))
+    rect(d, x + w * 0.66, y + 4, x + w * 0.66 + 5, y + h, fill=(10, 10, 12))
+    _flame(d, x + w * 0.30, y + h - 13, 5.5)
+    _flame(d, x + w * 0.50, y + h - 12, 4)
+    for i, (sx, sy, r) in enumerate(((0.70, 0.24, 4.5), (0.78, 0.16, 6),
+                                     (0.88, 0.10, 7.5))):
+        cx, cy = x + w * sx, y + h * sy + 3
+        d.ellipse([X(cx - r), X(cy - r * 0.7), X(cx + r), X(cy + r * 0.7)],
+                  fill=(104, 104, 106) if i % 2 else (128, 128, 126))
+
+
+def _mini_columns(d, x, y, w, h):
+    rect(d, x, y, x + w, y + h, fill=NAVY)
+    cx = x + w / 2
+    _poly(d, [(cx - 26, y + 8), (cx + 26, y + 8), (cx, y + 2)],
+          (226, 224, 216))
+    rect(d, cx - 26, y + 9, cx + 26, y + 10.5, fill=(226, 224, 216))
+    for i in range(5):
+        cxx = cx - 20 + i * 10
+        rect(d, cxx, y + 11, cxx + 3.4, y + h - 4, fill=(226, 224, 216))
+    rect(d, cx - 27, y + h - 3.5, cx + 27, y + h - 1.5,
+         fill=(226, 224, 216))
+
+
+def _mini_flood(d, x, y, w, h):
+    rect(d, x, y, x + w, y + h, fill=(52, 84, 110))
+    hx = x + w * 0.60
+    _poly(d, [(hx - 2, y + 10), (hx + 15, y + 3), (hx + 32, y + 10)],
+          (24, 26, 30))
+    rect(d, hx + 2, y + 10, hx + 28, y + h, fill=(24, 26, 30))
+    rect(d, hx + 12, y + 13, hx + 18, y + 18, fill=(238, 196, 110))
+    for r_ in range(3):
+        wy = y + h - 8 + r_ * 3.4
+        for c_ in range(14):
+            wx = x + 4 + c_ * (w - 8) / 13 + (r_ % 2) * 5
+            d.arc([X(wx), X(wy), X(wx + 9), X(wy + 5)], 180, 360,
+                  fill=(168, 204, 224), width=SS)
+
+
+def _mini_block(d, x, y, w, h):
+    rect(d, x, y, x + w, y + h, fill=(14, 18, 30))
+    bx = x + w * 0.52
+    rect(d, bx, y + 2, bx + w * 0.40, y + h, fill=(8, 10, 16))
+    import random
+    rng = random.Random(8)
+    for wy in range(3):
+        for wx in range(5):
+            if rng.random() < 0.5:
+                rect(d, bx + 3 + wx * (w * 0.40 - 6) / 5,
+                     y + 4.5 + wy * 6.4, bx + 6 + wx * (w * 0.40 - 6) / 5,
+                     y + 7.5 + wy * 6.4, fill=(238, 196, 110))
+    _flame(d, bx + 4, y + 6, 4.5)
+    _poly(d, [(x + w * 0.08, y + h), (x + w * 0.20, y + 8),
+              (x + w * 0.24, y + h)], (8, 10, 16))
+
+
+def _mini_coin(d, x, y, w, h):
+    rect(d, x, y, x + w, y + h, fill=(24, 26, 34))
+    pts = [(0.04, 0.24), (0.16, 0.34), (0.28, 0.62), (0.38, 0.78),
+           (0.50, 0.66), (0.62, 0.68), (0.74, 0.64)]
+    pp = [(x + w * a, y + h * b) for a, b in pts]
+    for (ax, ay), (bx2, by2) in zip(pp, pp[1:]):
+        d.line([X(ax), X(ay), X(bx2), X(by2)], fill=(120, 200, 130),
+               width=int(1.5 * SS))
+    cx, cy, r = x + w * 0.88, y + h * 0.52, 8.6
+    d.ellipse([X(cx - r), X(cy - r), X(cx + r), X(cy + r)],
+              fill=(216, 164, 52), outline=(150, 108, 30),
+              width=int(1.2 * SS))
+    text_c(d, cx, cy - 5.6, "B", font(SERIF_B, 11), (84, 58, 10))
+
+
+def _mini_ball(d, x, y, w, h):
+    rect(d, x, y, x + w, y + h, fill=(30, 84, 44))
+    d.line([X(x + w * 0.5), X(y), X(x + w * 0.5), X(y + h)],
+           fill=(220, 230, 214), width=SS)
+    cx, cy, r = x + w * 0.5, y + h * 0.52, 8.8
+    d.ellipse([X(cx - r), X(cy - r), X(cx + r), X(cy + r)],
+              fill=(244, 244, 240), outline=(30, 30, 30), width=SS)
+    _poly(d, [(cx, cy - 3.4), (cx + 3.2, cy - 1.1), (cx + 2, cy + 2.8),
+              (cx - 2, cy + 2.8), (cx - 3.2, cy - 1.1)], (20, 20, 20))
+    for a in (0.22, 0.78):
+        d.ellipse([X(x + w * a - 1.6), X(cy - 1.6), X(x + w * a + 1.6),
+                   X(cy + 1.6)], fill=(20, 20, 20))
+
+
+def _mini_robot(d, x, y, w, h):
+    rect(d, x, y, x + w, y + h, fill=(30, 32, 40))
+    cx, cy = x + w * 0.5, y + h * 0.56
+    d.line([X(cx), X(cy - 10), X(cx), X(cy - 13)], fill=(170, 174, 180),
+           width=SS)
+    d.ellipse([X(cx - 1.6), X(cy - 15), X(cx + 1.6), X(cy - 12)],
+              fill=(255, 70, 50))
+    rect(d, cx - 13, cy - 9, cx + 13, cy + 9, fill=(120, 126, 134),
+         outline=(196, 200, 206), wdt=1)
+    for ex in (-6.5, 6.5):
+        d.ellipse([X(cx + ex - 2.1), X(cy - 5.5), X(cx + ex + 2.1),
+                   X(cy - 1.3)], fill=(24, 26, 30))
+        d.ellipse([X(cx + ex - 0.8), X(cy - 4.2), X(cx + ex + 0.8),
+                   X(cy - 2.6)], fill=(255, 90, 70))
+    for i in range(4):
+        gx = cx - 6 + i * 4
+        d.line([X(gx), X(cy + 3.4), X(gx), X(cy + 6.6)],
+               fill=(24, 26, 30), width=SS)
+    rect(d, cx - 17, cy - 4, cx - 13.5, cy + 3, fill=(120, 126, 134))
+    rect(d, cx + 13.5, cy - 4, cx + 17, cy + 3, fill=(120, 126, 134))
+
+
+def _mini_houses(d, x, y, w, h):
+    rect(d, x, y, x + w, y + h, fill=(32, 22, 20))
+    for i, fx_ in enumerate((0.26, 0.58)):
+        hx = x + w * fx_
+        _poly(d, [(hx - 11, y + h - 7), (hx, y + h - 15),
+                  (hx + 11, y + h - 7)], (12, 10, 10))
+        rect(d, hx - 8, y + h - 7, hx + 8, y + h, fill=(12, 10, 10))
+        _flame(d, hx, y + h - 16, 5)
+    d.ellipse([X(x + w * 0.80), X(y + 3), X(x + w * 0.80 + 12),
+               X(y + 8)], fill=(110, 104, 100))
+
+
+def _mini_euro(d, x, y, w, h):
+    rect(d, x, y, x + w, y + h, fill=(24, 52, 120))
+    cx, cy = x + w * 0.5, y + h * 0.52
+    import math
+    for i in range(12):
+        a = math.radians(i * 30 - 90)
+        sx, sy = cx + 15.5 * math.cos(a), cy + 8.6 * math.sin(a)
+        d.ellipse([X(sx - 1.1), X(sy - 1.1), X(sx + 1.1), X(sy + 1.1)],
+                  fill=(232, 190, 80))
+    text_c(d, cx, cy - 8.6, "€", font(SERIF_B, 16), (240, 226, 170))
+    d.line([X(cx - 17), X(cy + 8), X(cx + 17), X(cy - 8)], fill=RED,
+           width=int(1.7 * SS))
+
+
+MINI = {"bottle": _mini_bottle, "factory": _mini_factory,
+        "columns": _mini_columns, "flood": _mini_flood,
+        "block": _mini_block, "coin": _mini_coin, "ball": _mini_ball,
+        "robot": _mini_robot, "houses": _mini_houses, "euro": _mini_euro}
+
 PAINTERS = {"gulf": paint_gulf, "ship": paint_ship, "cop": paint_cop,
             "drones": paint_drones}
 
@@ -501,25 +668,32 @@ def cards(d, y0):
         x = 14 + col * (cw + 9)
         y = y0 + row * (ch + 7)
         rect(d, x, y, x + cw, y + ch, outline=(176, 168, 146), wdt=1)
-        rect(d, x, y, x + cw, y + 12, fill=NAVY)
-        text_l(d, x + 5, y + 2.2, "%d · %s" % (c["n"], c["tag"]),
-               font(SANS_B, 7.6), (250, 248, 240))
-        badge(d, x + cw - 3, y + 1.5, c["badge"], BADGE_FILL[c["badge"]])
-        text_l(d, x + 6, y + 16, c["stat"], font(SERIF_B, 19), INK)
-        for j, ln in enumerate(wrap(d, c["note"], font(SANS_B, 6.6), 56)[:2]):
-            text_l(d, x + 6, y + 38 + j * 8, ln, font(SANS_B, 6.6),
-                   (96, 92, 84))
-        hy = y + 15
-        for ln in wrap(d, c["headline"], font(SERIF_B, 11.5), cw - 74)[:3]:
-            d.text((X(x + 68), X(hy)), ln, font=font(SERIF_B, 11.5),
-                   fill=INK)
-            hy += 13
-        det = c["detail"]
-        while det and d.textlength(det, font=font(SANS, 8.4)) / SS > cw - 11:
-            det = det[:-2].rstrip() + "…" if len(det) > 4 else det[:-1]
-        text_l(d, x + 6, y + ch - 20, det, font(SANS, 8.4), (56, 56, 52))
-        text_l(d, x + 6, y + ch - 10, c["sources"], font(SANS_B, 6.6),
+        # illustrated strip, as both winning editions draw on every card:
+        # a small scene, the stat as a red chip at its left, the certainty
+        # badge at its right
+        MINI[c["art"]](d, x + 1, y + 1, cw - 2, 22)
+        chip = ("%s %s" % (c["stat"], c["note"])).upper()
+        f = font(SANS_B, 7.5)
+        chw = d.textlength(chip, font=f) / SS + 10
+        rect(d, x + 1, y + 1, x + 1 + chw, y + 13, fill=RED)
+        text_l(d, x + 6, y + 3.4, chip, f, (252, 248, 240))
+        badge(d, x + cw - 3, y + 2.5, c["badge"], BADGE_FILL[c["badge"]])
+        # kicker row: number and place at the left, sources at the right
+        text_l(d, x + 6, y + 26.5, str(c["n"]), font(SERIF_B, 12), RED_D)
+        nw = d.textlength(str(c["n"]), font=font(SERIF_B, 12)) / SS
+        text_l(d, x + 11 + nw, y + 28.2, c["tag"], font(SANS_B, 7.6), INK)
+        text_r(d, x + cw - 5, y + 28.2, c["sources"], font(SANS_B, 6.6),
                (120, 114, 100))
+        # headline, up to two lines at full card width
+        hy = y + 38
+        for ln in wrap(d, c["headline"], font(SERIF_B, 11.5), cw - 12)[:2]:
+            d.text((X(x + 6), X(hy)), ln, font=font(SERIF_B, 11.5),
+                   fill=INK)
+            hy += 12.5
+        det = c["detail"]
+        while det and d.textlength(det, font=font(SANS, 8.2)) / SS > cw - 12:
+            det = det[:-2].rstrip() + "…" if len(det) > 4 else det[:-1]
+        text_l(d, x + 6, y + ch - 11, det, font(SANS, 8.2), (56, 56, 52))
     return y0 + 2 * ch + 7
 
 
