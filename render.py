@@ -264,7 +264,7 @@ def paint_gulf(d, x, y, w, h):
     text_l(d, *P(6, 84), "SAUDI ARABIA", f, (110, 96, 66))
     text_l(d, *P(30, 40), "THE GULF", font(SERIF_I, 9), (70, 96, 110))
     text_l(d, *P(86, 84), "OMAN", f, (110, 96, 66))
-    text_l(d, *P(36.5, 60), "QATAR", font(SANS_B, 6.5), (110, 96, 66))
+    text_l(d, *P(32.5, 64), "QATAR", font(SANS_B, 6.5), (110, 96, 66))
     text_l(d, *P(85, 44), "STRAIT OF", font(SANS_B, 7), (52, 84, 100))
     text_l(d, *P(85, 51), "HORMUZ", font(SANS_B, 7), (52, 84, 100))
     # Bahrain island + fire
@@ -346,53 +346,83 @@ def paint_ship(d, x, y, w, h):
 
 
 def paint_cop(d, x, y, w, h):
-    """COP31: summit sign, the draft text with fossil fuels struck, a clock."""
-    rect(d, x, y, x + w, y + h, fill=(226, 232, 220))
-    ux = w / 100.0
+    """COP31: the delegates' table — a full negotiating hall, a summit
+    medallion on the wall, the clock running into overtime."""
+    rect(d, x, y, x + w, y + h, fill=(206, 222, 216))
+    ux, uy = w / 100.0, h / 100.0
 
     def P(a, b):
-        return (x + a * ux, y + b * h / 100.0)
-    gx, gy = P(4, 12)
-    rect(d, gx, gy, gx + 30 * ux, gy + 52, fill=(24, 92, 62))
-    text_c(d, gx + 15 * ux, gy + 9, "COP31", font(SERIF_B, 17),
-           (240, 246, 238))
-    text_c(d, gx + 15 * ux, gy + 32, "ANTALYA · UN", font(SANS_B, 6.5),
-           (208, 226, 210))
-    text_c(d, gx + 15 * ux, gy + 41, "CLIMATE SUMMIT", font(SANS_B, 6.5),
-           (208, 226, 210))
-    # draft page
-    px_, py_ = P(40, 8)
-    pw, ph = 33 * ux, 66
-    rect(d, px_, py_, px_ + pw, py_ + ph, fill=(250, 249, 244),
-         outline=(120, 118, 108))
-    text_l(d, px_ + 5, py_ + 5, "DRAFT TEXT", font(SANS_B, 7.5), (90, 90, 88))
-    for i in range(3):
-        rect(d, px_ + 5, py_ + 18 + i * 7, px_ + pw - 6, py_ + 20.5 + i * 7,
-             fill=(168, 166, 156))
-    text_l(d, px_ + 5, py_ + 42, "fossil fuels", font(SERIF_B, 11.5), RED_D)
-    d.line([X(px_ + 3), X(py_ + 49), X(px_ + 62), X(py_ + 49)], fill=RED_D,
-           width=int(1.8 * SS))
-    text_l(d, px_ + 5, py_ + 54, "no mention in the draft", font(SANS_I, 6.8),
-           (110, 60, 50))
-    # clock
-    cx, cy = P(86, 34)
-    r = 15.5
+        return (x + a * ux, y + b * uy)
+    # wall seams
+    for sx in (25, 50, 75):
+        px_, _ = P(sx, 0)
+        d.line([X(px_), X(y), X(px_), X(y + h)], fill=(188, 204, 196),
+               width=SS)
+    # summit medallion: a tree inside a ring, on the wall
+    mx, my = P(15, 30)
+    r = 20
+    d.ellipse([X(mx - r), X(my - r), X(mx + r), X(my + r)],
+              fill=(233, 240, 231), outline=(24, 92, 62),
+              width=int(2 * SS))
+    for (ox, oy, orr, col) in ((-8, -6, 9, (44, 128, 84)),
+                               (8, -6, 9, (44, 128, 84)),
+                               (0, -13, 11, (30, 110, 70))):
+        d.ellipse([X(mx + ox - orr), X(my + oy - orr), X(mx + ox + orr),
+                   X(my + oy + orr)], fill=col)
+    rect(d, mx - 1.6, my + 2, mx + 1.6, my + 13, fill=(110, 78, 48))
+    d.line([X(mx - 13), X(my + 14), X(mx + 13), X(my + 14)],
+           fill=(24, 92, 62), width=int(1.6 * SS))
+    # wall clock, smaller, top right
+    cx, cy = P(90, 26)
+    r = 12.5
     d.ellipse([X(cx - r), X(cy - r), X(cx + r), X(cy + r)],
               fill=(250, 249, 244), outline=INK, width=int(1.6 * SS))
     import math
     for ang in range(0, 360, 30):
         a = math.radians(ang)
-        d.line([X(cx + (r - 3) * math.cos(a)), X(cy + (r - 3) * math.sin(a)),
+        d.line([X(cx + (r - 2.4) * math.cos(a)),
+                X(cy + (r - 2.4) * math.sin(a)),
                 X(cx + r * math.cos(a)), X(cy + r * math.sin(a))], fill=INK,
                width=SS)
-    d.line([X(cx), X(cy), X(cx + 2), X(cy - r + 4)], fill=INK,
+    d.line([X(cx), X(cy), X(cx + 1.6), X(cy - r + 3.4)], fill=INK,
            width=int(1.8 * SS))
-    d.line([X(cx), X(cy), X(cx + r - 5), X(cy + 3)], fill=INK,
+    d.line([X(cx), X(cy), X(cx + r - 4), X(cy + 2.4)], fill=INK,
            width=int(1.8 * SS))
-    text_c(d, cx, cy + r + 5, "OVERTIME", font(SANS_B, 9.5), RED_D)
-    text_c(d, cx, cy + r + 17, "a second day of", font(SANS, 7),
-           (70, 70, 66))
-    text_c(d, cx, cy + r + 25, "overtime", font(SANS, 7), (70, 70, 66))
+    # the long table
+    _poly(d, [(x + 10, y + 58), (x + w - 10, y + 58), (x + w - 2, y + 65),
+              (x + 2, y + 65)], (158, 116, 76))
+    rect(d, x + 2, y + 65, x + w - 2, y + h, fill=(120, 84, 52))
+    # delegates seated behind the table: heads, shoulders, nameplates, mics
+    skins = [(232, 190, 160), (198, 150, 116), (160, 116, 84),
+             (120, 84, 58), (240, 205, 180), (208, 164, 128),
+             (146, 102, 72), (226, 182, 148), (172, 128, 96)]
+    suits = [(38, 44, 58), (64, 52, 44), (30, 58, 48), (84, 40, 44),
+             (48, 48, 66), (58, 58, 58), (44, 62, 80), (70, 60, 40),
+             (52, 44, 64)]
+    n = 9
+    for i in range(n):
+        fx = 0.10 + 0.80 * i / (n - 1)
+        cxp = x + w * fx
+        top = y + 58
+        _poly(d, [(cxp - 9.5, top), (cxp - 6.5, top - 9), (cxp + 6.5, top - 9),
+                  (cxp + 9.5, top)], suits[i])
+        d.ellipse([X(cxp - 5.4), X(top - 19.5), X(cxp + 5.4),
+                   X(top - 8.7)], fill=skins[i])
+        # microphone stalk + nameplate on the table edge
+        d.line([X(cxp + 7), X(top + 1), X(cxp + 3.4), X(top - 6.5)],
+               fill=(40, 40, 40), width=SS)
+        d.ellipse([X(cxp + 2.6), X(top - 7.6), X(cxp + 4.2), X(top - 6.0)],
+                  fill=(30, 30, 30))
+        rect(d, cxp - 6, top + 2.2, cxp + 6, top + 5.6,
+             fill=(244, 242, 234))
+    # foreground row: backs of heads along the bottom edge (depth)
+    for fx, col in ((0.16, (34, 28, 24)), (0.38, (52, 40, 30)),
+                    (0.60, (28, 26, 30)), (0.82, (44, 34, 26))):
+        cxp = x + w * fx
+        _poly(d, [(cxp - 11, y + h), (cxp - 8, y + h - 8),
+                  (cxp + 8, y + h - 8), (cxp + 11, y + h)], col)
+        d.ellipse([X(cxp - 6.4), X(y + h - 19), X(cxp + 6.4),
+                   X(y + h - 6.2)], fill=col)
 
 
 def paint_drones(d, x, y, w, h):
@@ -615,10 +645,29 @@ def _mini_euro(d, x, y, w, h):
            width=int(1.7 * SS))
 
 
+def _mini_ship(d, x, y, w, h):
+    rect(d, x, y, x + w, y + h * 0.45, fill=(172, 198, 208))
+    rect(d, x, y + h * 0.45, x + w, y + h, fill=(70, 106, 128))
+    hx0, hx1 = x + w * 0.30, x + w * 0.78
+    hy = y + h * 0.52
+    _poly(d, [(hx0, hy), (hx1, hy), (hx1 - 5, hy + 6.5), (hx0 + 3, hy + 6.5)],
+          (34, 38, 44))
+    for i, col in enumerate(((176, 84, 44), (52, 96, 140), (64, 128, 88))):
+        rect(d, hx0 + 5 + i * 8.5, hy - 4.6, hx0 + 12.5 + i * 8.5, hy - 0.4,
+             fill=col)
+    rect(d, hx1 - 9, hy - 10.5, hx1 - 3.4, hy - 0.4, fill=(226, 224, 216))
+    for (sx, sy, r) in ((0.52, 0.30, 3.4), (0.58, 0.20, 4.6)):
+        cx, cy = x + w * sx, y + h * sy
+        d.ellipse([X(cx - r), X(cy - r * 0.72), X(cx + r), X(cy + r * 0.72)],
+                  fill=(112, 114, 116))
+    _flame(d, x + w * 0.545, y + h * 0.44, 4.6)
+
+
 MINI = {"bottle": _mini_bottle, "factory": _mini_factory,
         "columns": _mini_columns, "flood": _mini_flood,
         "block": _mini_block, "coin": _mini_coin, "ball": _mini_ball,
-        "robot": _mini_robot, "houses": _mini_houses, "euro": _mini_euro}
+        "robot": _mini_robot, "houses": _mini_houses, "euro": _mini_euro,
+        "ship": _mini_ship}
 
 PAINTERS = {"gulf": paint_gulf, "ship": paint_ship, "cop": paint_cop,
             "drones": paint_drones}
@@ -767,7 +816,7 @@ def world_map(d, x, y, w, h):
         d.ellipse([X(cx - r), X(cy - r), X(cx + r), X(cy + r)], fill=col,
                   outline=(250, 248, 240), width=SS)
         text_c(d, cx, cy - 4.6, str(num), font(SANS_B, 7.2), (252, 250, 244))
-    text_l(d, x, y + h - 1, "story 3’s barrage struck 18 sites across "
+    text_l(d, x, y + h - 1, "story 1’s barrage struck 18 sites across "
            "Ukraine — one pin stands for the whole country",
            font(SANS_I, 8.4), (92, 88, 80))
 

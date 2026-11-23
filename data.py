@@ -4,9 +4,9 @@ day; see SOURCES.md). Consumed by render.py."""
 DAY = {
     "date_long": "Sunday 22 November 2026",
     "dayline": "DAY 326 OF 2026",
-    "ticker": "Russia fires 186 drones at Ukraine in one night  ◆  Russian "
-              "cargo ship ablaze in the Baltic  ◆  COP31 deadlocked into a "
-              "second day of overtime",
+    "ticker": "Russia fires 186 drones at Ukraine in one night  ◆  COP31 "
+              "deadlocked into a second day of overtime  ◆  Iran claims US "
+              "positions hit; Bahrain denies it",
     "count_line": "40 STORIES · 9 REGIONS · EVERY ONE DATED SUNDAY "
                   "22 NOVEMBER 2026",
     "stats": [
@@ -26,20 +26,19 @@ DAY = {
         (0.02, "OVERNIGHT · 186 DRONES"),
         (0.30, "09:00 APEX REVIEW"),
         (0.50, "MIDDAY · COP31 DRAFT"),
-        (0.68, "BAHRAIN DEMANDS PAYMENT"),
+        (0.68, "BAHRAIN DENIES IRAN CLAIM"),
         (0.85, "BITCOIN STEADIES"),
         (0.955, "SERANG SEARCH"),
     ],
     "leads": [
         {
-            "art": "ship", "chip": "DRONE STRIKE · BALTIC SEA",
-            "chip_r": "CREW OF 16 SAFE",
-            "kicker": "1 · BALTIC SEA · CONFLICT", "badge": "CONFIRMED",
-            "headline": "Russian cargo ship burns after Baltic drone strike",
-            "summary": "Sparta II drifts into Finnish waters, still "
-                       "burning; all 16 crew evacuated as Helsinki blames "
-                       "Kyiv's drones.",
-            "sources": "REUTERS · YLE",
+            "art": "drones", "chip": "186 DRONES · ONE NIGHT",
+            "chip_r": "161 DOWNED",
+            "kicker": "1 · UKRAINE · WAR", "badge": "CONFIRMED",
+            "headline": "Russia fires 186 drones in one-night barrage",
+            "summary": "Kyiv says 161 were downed or jammed; strikes land "
+                       "at 18 sites, 11 hurt in Sloviansk and Kherson.",
+            "sources": "QNA · UKR. AIR FORCE",
         },
         {
             "art": "cop", "chip": "COP31 · ANTALYA", "chip_r": "OVERTIME",
@@ -51,13 +50,14 @@ DAY = {
             "sources": "GUARDIAN · REUTERS",
         },
         {
-            "art": "drones", "chip": "186 DRONES · ONE NIGHT",
-            "chip_r": "161 DOWNED",
-            "kicker": "3 · UKRAINE · WAR", "badge": "CONFIRMED",
-            "headline": "Russia fires 186 drones in one-night barrage",
-            "summary": "Kyiv says 161 were downed or jammed; strikes land "
-                       "at 18 sites, 11 hurt in Sloviansk and Kherson.",
-            "sources": "QNA · UKR. AIR FORCE",
+            "art": "gulf", "chip": "CLAIM VS DENIAL",
+            "chip_r": "NO INJURIES",
+            "kicker": "3 · MANAMA, BAHRAIN · IRAN", "badge": "CLAIM",
+            "headline": "Iran claims US positions hit; Bahrain denies it",
+            "summary": "The IRGC says its strikes hit US positions; "
+                       "Manama answers: the plant hit was civilian — a "
+                       "fire, no injuries — and Tehran must pay.",
+            "sources": "RTM · REUTERS",
         },
     ],
     "cards": [
@@ -73,24 +73,24 @@ DAY = {
          "headline": "Search for 36 missing in factory fire",
          "detail": "Rescuers comb gutted candy factory; blaze killed 3",
          "sources": "RTM · BERNAMA"},
-        {"n": 6, "tag": "BAHRAIN · GULF", "badge": "CONFIRMED",
-         "art": "columns",
-         "stat": "UN", "note": "ACTION URGED",
-         "headline": "Bahrain demands Iran pay for strike damage",
-         "detail": "Tehran held fully responsible for the plant hit",
-         "sources": "RTM · REUTERS"},
+        {"n": 6, "tag": "KYIV · WAR", "badge": "REPORTED",
+         "art": "block",
+         "stat": "14", "note": "FEARED TRAPPED",
+         "headline": "Fourteen feared trapped in Kyiv block",
+         "detail": "Residential block hit by a drone overnight",
+         "sources": "APEX WIRE"},
         {"n": 7, "tag": "FRANCE · FLOODS", "badge": "REPORTED",
          "art": "flood",
          "stat": "850", "note": "HOMES SUBMERGED",
          "headline": "Floods submerge some 850 homes in France",
          "detail": "Waters rise across several regions",
          "sources": "AKTUAL"},
-        {"n": 8, "tag": "KYIV · WAR", "badge": "REPORTED",
-         "art": "block",
-         "stat": "14", "note": "FEARED TRAPPED",
-         "headline": "Fourteen feared trapped in Kyiv block",
-         "detail": "Residential block hit by a drone overnight",
-         "sources": "APEX WIRE"},
+        {"n": 8, "tag": "FINLAND · BALTIC SEA", "badge": "CONFIRMED",
+         "art": "ship",
+         "stat": "16", "note": "CREW SAFE",
+         "headline": "Russian cargo ship Sparta II still burning",
+         "detail": "Drifts into Finnish waters; crew of 16 evacuated",
+         "sources": "REUTERS · YLE"},
         {"n": 9, "tag": "MARKETS · CRYPTO", "badge": "REPORTED",
          "art": "coin",
          "stat": "$60k", "note": "BITCOIN STEADIES",
@@ -162,18 +162,18 @@ DAY = {
     "footer": "Every story here was first reported on Sunday "
               "22 November 2026, as the named outlets reported it.",
     "how_sure": "HOW SURE — CONFIRMED: carried by 2+ major outlets · "
-                "OFFICIAL: on the record: agency, ministry, federation · "
-                "REPORTED: one major outlet",
+                "OFFICIAL: on the record · REPORTED: one major outlet · "
+                "CLAIM: one side's account, answered by the other",
     "seed": 20261122,
     "out_name": "entry.png",
 }
 
 # Pins for the map: (story number, lon, lat, region)
 PINS = [
-    (1, 24.0, 59.5, "Europe"), (2, 30.7, 36.9, "Middle East"),
-    (3, 31.5, 49.0, "Europe"), (4, 93.9, 24.8, "South Asia"),
-    (5, 106.1, -6.1, "South-East Asia"), (6, 50.5, 26.2, "Middle East"),
-    (7, 2.5, 47.0, "Europe"), (8, 30.5, 50.4, "Europe"),
+    (1, 31.5, 49.0, "Europe"), (2, 30.7, 36.9, "Middle East"),
+    (3, 50.5, 26.2, "Middle East"), (4, 93.9, 24.8, "South Asia"),
+    (5, 106.1, -6.1, "South-East Asia"), (6, 30.5, 50.4, "Europe"),
+    (7, 2.5, 47.0, "Europe"), (8, 24.0, 59.5, "Europe"),
     (9, -74.0, 40.7, "Americas"), (10, -80.2, 25.8, "Americas"),
     (11, 6.1, 46.2, "Global"), (12, 106.3, -6.8, "South-East Asia"),
     (13, 19.7, 48.7, "Europe"), (14, 38.9, 45.0, "Europe"),
